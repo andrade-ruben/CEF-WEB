@@ -1,0 +1,152 @@
+<div class="container w-100 m-auto mt-5">
+    <h1 class="gradient-text">{{title}}</h1>
+  
+    <mat-card-subtitle style="text-align: center;">Select the form type you need, then fill out he fields below!</mat-card-subtitle>
+    
+    <div class="button-container">
+      <div class="row">
+        <div class="col">
+          <button class="button form-button">FORM NAME A</button>
+        </div>
+        <div class="col">
+          <button class="button form-button">FORM NAME B</button>
+        </div>
+        <div class="col">
+          <button class="button form-button">FORM NAME C</button>
+        </div>
+        <div class="col">
+          <button class="button form-button">FORM NAME D</button>
+        </div>
+        <div class="col">
+          <button class="button form-button">FORM NAME E</button>
+        </div>
+        <div class="col">
+          <button class="button form-button">FORM NAME F</button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="container">
+        <form class="card">
+            <mat-card>
+                <mat-card-header>
+                <mat-card-title>{{title}}</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                <div class="row" style="margin-bottom: 1rem;">
+                    <div class="col-md-2">
+                        <h2 class="card-title">Date Visited</h2>
+                    </div>
+                    <div class="col-md-4 md-form md-outline datepicker">
+                        <input type="date" id="datepicker" class="form-control">
+                    </div>
+                    <div class="col-md-2">
+                        <h2 class="card-title">Time Visited</h2>
+                    </div>
+                    <div class="col-md-4">
+                        
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                    <mat-form-field class="full-width" appearance="fill">
+                        <mat-label>First Name</mat-label>
+                        <input matInput="" placeholder="Ex:John">
+                    </mat-form-field>
+                    </div>
+                    <div class="col-md-6">
+                    <mat-form-field class="full-width" appearance="fill">
+                        <mat-label>Last Name</mat-label>
+                        <input matInput="" placeholder="Ex:Doe">
+                    </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                    <mat-form-field class="full-width" appearance="fill">
+                        <mat-label>Contact's Name</mat-label>
+                        <input matInput="" placeholder="Ex:John Doe">
+                    </mat-form-field>
+                    </div>
+                    <div class="col-md-6">
+                    <mat-form-field class="full-width" appearance="fill">
+                        <mat-label>Organization Name</mat-label>
+                        <input matInput="" placeholder="Ex:CEF of Philadelphia Inc.">
+                    </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                <div class="col-md-6">
+                    <mat-form-field class="full-width" appearance="fill">
+                    <mat-label>Street Address</mat-label>
+                    <input matInput="" placeholder="123 CEF Street">
+                    </mat-form-field>
+                </div>
+                <div class="col-md-5">
+                    <mat-form-field class="full-width" appearance="fill">
+                    <mat-label>Apt.</mat-label>
+                    <input matInput="" placeholder="Apt 123">
+                    </mat-form-field>
+                </div>
+                </div>
+                <div class="row">
+                <div class="col-md-6">
+                    <mat-form-field class="full-width" appearance="fill">
+                    <mat-label>City</mat-label>
+                    <input matInput="" placeholder="Philadelphia">
+                    </mat-form-field>
+                </div>
+                <div class="col-md-3">
+                    <mat-form-field class="full-width" appearance="fill">
+                    <mat-label>State.</mat-label>
+                    <input matInput="" placeholder="PA">
+                    </mat-form-field>
+                </div>
+                <div class="col-md-3">
+                    <mat-form-field class="full-width" appearance="fill">
+                    <mat-label>Zip</mat-label>
+                    <input matInput="" placeholder="12345">
+                    </mat-form-field>
+                </div>
+                </div>
+                <div class="row">
+                <div class="col-md-6">
+                    <mat-form-field class="full-width" appearance="fill">
+                    <mat-label>Email</mat-label>
+                    <input matInput="" placeholder="pat@cef.com">
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                    <mat-form-field class="full-width" appearance="fill">
+                    <mat-label>Phone Number</mat-label>
+                    <input matInput="" placeholder="(123)456-7890">
+                    <mat-icon matSuffix>phone</mat-icon>
+                    <mat-hint>Include area code</mat-hint>
+                    </mat-form-field>
+                </div>
+                </div>
+                </mat-card-content>
+
+                <mat-card-header>
+                <mat-card-title>NOTES FROM VISIT</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                <div class="row">
+                    <div class="col-md-12">
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Comment</mat-label>
+                        <textarea matInput></textarea>
+                    </mat-form-field>
+                    </div>
+                </div>
+                </mat-card-content>
+
+                <div class="text-center">
+                <mat-card-actions>
+                    <button mat-raised-button type="submit" class="submit-button">Submit</button>
+                </mat-card-actions>        
+                </div>
+            </mat-card>
+        </form>
+    </div>
+ </div>

@@ -1,0 +1,70 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav" fixedInViewport
+        [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+        [mode]="(isHandset$ | async) ? 'push' : 'side'"
+        [opened]="(isHandset$ | async) === false">
+      <mat-toolbar id="logo">
+        <span class="title-center"><img class="pic" src="/assets/white-cef-logo.png" alt="CEF Logo"></span>
+      </mat-toolbar>
+      <mat-nav-list>
+        <div class="side-nav-content">
+            <ul class="nav-list">
+                <li class="nav-list-item" *ngFor="let item of list">
+                    <a class="sidenav-nav-link" [routerLink]="[item.routeLink]" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                        <i class="nav-link-icon {{item.icon}}"></i>
+                        <span><a href="#" class="nav-link-text" id="">{{item.label}}</a></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar color="primary">
+        <button
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="drawer.toggle()"
+          *ngIf="isHandset$ | async">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        <span>CEF of Philadelphia</span>
+        <span class="example-spacer"></span>
+            <div class="profile-logo dropstart">
+              <nav class="navbar navbar-expand-lg navbar-light">
+                  <div class="container-fluid">
+                    <ul class="navbar-nav">
+                      <!-- Avatar -->
+                      <li class="nav-item btn btn-primary dropdown dropdown-menu-light">
+                        <a
+                          class="nav-link dropdown-toggle d-flex align-items-center"
+                          href="#"
+                          id="navbarDropdownMenuLink"
+                          role="button"
+                          data-mdb-toggle="dropdown"
+                          aria-expanded="false"
+                        > Lucas
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdownMenuLink">
+                          <li>
+                            <a class="dropdown-item" href="#">My profile</a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" href="#">Settings</a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" href="#">Logout</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                </nav>
+          </div>
+      </mat-toolbar>
+      <!-- Add Content Here -->
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  
