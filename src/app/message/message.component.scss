@@ -109,3 +109,12 @@
    border-radius: 20px;
 }
 
+.article-title {
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: sans-serif;
+    color: white;
+    background: linear-gradient(to bottom, rgba(226,37,255) 0%, rgba(73,198,252) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
