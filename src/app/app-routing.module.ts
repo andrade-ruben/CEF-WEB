@@ -8,6 +8,8 @@ import { DonationsComponent } from './donations/donations.component';
 import { MediaComponent } from './media/media.component';
 import { ResourcesComponent } from './resources/resources.component';
 
+import { LoginComponent } from './core/login/login.component';
+
 const routes: Routes = [
   {path: '', redirectTo: '', pathMatch: 'full'},
   {path: 'message', component: MessageComponent},
@@ -17,6 +19,7 @@ const routes: Routes = [
   {path:'donations', component:DonationsComponent},
   {path:'media', component:MediaComponent},
   {path:'resources', component:ResourcesComponent},
+  {path:'login', component:LoginComponent},
 ];
 
 @NgModule({
