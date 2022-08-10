@@ -1,152 +1,603 @@
-<div class="container w-100 m-auto mb-5 mt-5">
-    <h1 class="gradient-text">{{title}}</h1>
-  
-    <mat-card-subtitle style="text-align: center;">Select the form type you need, then fill out he fields below!</mat-card-subtitle>
-    
-    <div class="button-container">
-      <div class="row">
-        <div class="col">
-          <button class="button form-button">FORM NAME A</button>
-        </div>
-        <div class="col">
-          <button class="button form-button">FORM NAME B</button>
-        </div>
-        <div class="col">
-          <button class="button form-button">FORM NAME C</button>
-        </div>
-        <div class="col">
-          <button class="button form-button">FORM NAME D</button>
-        </div>
-        <div class="col">
-          <button class="button form-button">FORM NAME E</button>
-        </div>
-        <div class="col">
-          <button class="button form-button">FORM NAME F</button>
-        </div>
-      </div>
+<div class="container  w-100 m-auto mb-5 mt-5">
+    <div class="row">
+        <h1 class="mat-h3 text-center mb-4 article-title">FORMS</h1>
     </div>
     
-    <div class="container">
-        <form class="card" (ngSubmit)="onSubmit()">
-            <mat-card>
-                <mat-card-header>
-                <mat-card-title>{{title}}</mat-card-title>
-                </mat-card-header>
-                <mat-card-content>
-                <div class="row" style="margin-bottom: 1rem;">
-                    <div class="col-md-2">
-                        <h2 class="card-title">Date Visited</h2>
-                    </div>
-                    <div class="col-md-4 md-form md-outline datepicker">
-                        <input type="date" id="datepicker" class="form-control">
-                    </div>
-                    <div class="col-md-2">
-                        <h2 class="card-title">Time Visited</h2>
-                    </div>
-                    <div class="col-md-4">
-                        
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                    <mat-form-field class="full-width" appearance="fill">
-                        <mat-label for="first-name">First Name</mat-label>
-                        <input matInput placeholder="Ex:John" id="first-name" type="text" class="form-control" formControlName="firstName">
-                    </mat-form-field>
-                    </div>
-                    <div class="col-md-6">
-                    <mat-form-field class="full-width" appearance="fill">
-                        <mat-label for="last-name">Last Name</mat-label>
-                        <input matInput placeholder="Ex:Doe" id="last-name" type="text" class="form-control" formControlName="lastName">
-                    </mat-form-field>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                    <mat-form-field class="full-width" appearance="fill">
-                        <mat-label for="contact-name">Contact's Name</mat-label>
-                        <input matInput placeholder="Ex:John Doe" id="contact-name" type="text" class="form-control" formControlName="contactName">
-                    </mat-form-field>
-                    </div>
-                    <div class="col-md-6">
-                    <mat-form-field class="full-width" appearance="fill">
-                        <mat-label for="organization-name">Organization Name</mat-label>
-                        <input matInput placeholder="Ex:CEF of Philadelphia Inc." id="organization-name" type="text" class="form-control" formControlName="organizationName">
-                    </mat-form-field>
-                    </div>
-                </div>
-                <div formGroupName="address" class="row">
-                <div class="col-md-6">
-                    <mat-form-field class="full-width" appearance="fill">
-                    <mat-label for="street">Street Address</mat-label>
-                    <input matInput placeholder="123 CEF Street" id="street" type="text" class="form-control" formControlName="street">
-                    </mat-form-field>
-                </div>
-                <div class="col-md-5">
-                    <mat-form-field class="full-width" appearance="fill">
-                    <mat-label for="apt">Apt.</mat-label>
-                    <input matInput placeholder="123" id="apt" type="number" class="form-control" formControlName="apt">
-                    </mat-form-field>
-                </div>
-                </div>
-                <div class="row">
-                <div class="col-md-6">
-                    <mat-form-field class="full-width" appearance="fill">
-                    <mat-label for="city">City</mat-label>
-                    <input matInput placeholder="Philadelphia" id="city" type="text" class="form-control" formControlName="city">
-                    </mat-form-field>
-                </div>
-                <div class="col-md-3">
-                    <mat-form-field class="full-width" appearance="fill">
-                    <mat-label for="state">State.</mat-label>
-                    <input matInput placeholder="PA" id="state" type="text" class="form-control" formControlName="state">
-                    </mat-form-field>
-                </div>
-                <div class="col-md-3">
-                    <mat-form-field class="full-width" appearance="fill">
-                    <mat-label for="zip">Zip</mat-label>
-                    <input matInput placeholder="12345" id="zip" type="text" class="form-control" formControlName="zip">
-                    </mat-form-field>
-                </div>
-                </div>
-                <div class="row">
-                <div class="col-md-6">
-                    <mat-form-field class="full-width" appearance="fill">
-                    <mat-label for="email">Email</mat-label>
-                    <input matInput placeholder="pat@cef.com" id="email" type="text" class="form-control" formControlName="email">
-                    </mat-form-field>
-                </div>
-                <div class="col-md-6">
-                    <mat-form-field class="full-width" appearance="fill">
-                    <mat-label for="tel">Phone Number</mat-label>
-                    <input matInput placeholder="(123)456-7890" id="tel" type="number" class="form-control" formControlName="tel">
-                    <mat-icon matSuffix>phone</mat-icon>
-                    <mat-hint>Include area code</mat-hint>
-                    </mat-form-field>
-                </div>
-                </div>
-                </mat-card-content>
+    <div class="app">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-10">
+                    <form class="card">
+                        <ul class="nav nav-tabs nav-fill" id="myTab" role="tablist">
+                            <li class="nav-item" role="presentation"> 
+                                <button class="nav-link active" id="faq_tab_1-tab" data-bs-toggle="tab" data-bs-target="#faq_tab_1" type="button" role="tab" aria-controls="faq_tab_1" aria-selected="true">
+                                    <div class="d-flex flex-column lh-lg"> 
+                                        <i class='bx bxs-plane-alt'></i> <span>Contact</span> 
+                                    </div>
+                                </button> 
+                            </li>
+                            <li class="nav-item" role="presentation"> 
+                                <button class="nav-link" id="faq_tab_2-tab" data-bs-toggle="tab" data-bs-target="#faq_tab_2" type="button" role="tab" aria-controls="faq_tab_2" aria-selected="false">
+                                    <div class="d-flex flex-column lh-lg"> 
+                                        <i class='bx bxs-shopping-bag'></i> <span>Hostess Evaluation</span> 
+                                    </div>
+                                </button> 
+                            </li>
+                            <li class="nav-item" role="presentation"> 
+                                <button class="nav-link" id="faq_tab_3-tab" data-bs-toggle="tab" data-bs-target="#faq_tab_3" type="button" role="tab" aria-controls="faq_tab_3" aria-selected="false">
+                                    <div class="d-flex flex-column lh-lg"> 
+                                        <i class='bx bx-check-circle'></i> <span>Statistical Report</span> 
+                                    </div>
+                                </button> 
+                            </li>
+                            <li class="nav-item" role="presentation"> 
+                                <button class="nav-link" id="faq_tab_4-tab" data-bs-toggle="tab" data-bs-target="#faq_tab_4" type="button" role="tab" aria-controls="faq_tab_4" aria-selected="false">
+                                    <div class="d-flex flex-column lh-lg"> 
+                                        <i class='bx bxs-plane-alt'></i> <span>Summer Missionary</span>
+                                    </div>
+                                </button> 
+                            </li>
+                        </ul>
 
-                <mat-card-header>
-                <mat-card-title>NOTES FROM VISIT</mat-card-title>
-                </mat-card-header>
-                <mat-card-content>
-                <div class="row">
-                    <div class="col-md-12">
-                    <mat-form-field class="full-width" appearance="outline">
-                        <mat-label for="comment">Comment</mat-label>
-                        <textarea matInput id="commnet" type="text" class="form-control" formControlName="comment"></textarea>
-                    </mat-form-field>
-                    </div>
-                </div>
-                </mat-card-content>
+                        <!-- CONTACT FORM -->
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade active show" id="faq_tab_1" role="tabpanel" aria-labelledby="faq_tab_1-tab">
+                                <div class="container p-3 scroll-y">
+                                    <div class="row input-group p-2">
+                                        <div class="col-md-2">
+                                            <h2 class="card-title">Date Visited</h2>
+                                        </div>
+                                        <div class="col-md-4 md-form md-outline datepicker">
+                                            <input type="date" id="datepicker" class="form-control">
+                                        </div>
+                                        <div class="col-md-2">
+                                            <h2 class="card-title">Time Visited</h2>
+                                        </div>
+                                        <div class="col-md-4">
+                                            
+                                        </div>
+                                    </div>
 
-                <div class="text-center">
-                <mat-card-actions>
-                    <button mat-raised-button type="submit" class="submit-button">Submit</button>
-                </mat-card-actions>        
+                                    <div class="input-group p-2">
+                                        <div class="form-floating mb-3 col-md-6">
+                                            <input type="text" class="form-control" id="floatingInput" placeholder="John">
+                                            <label for="floatingInput">First Name</label>
+                                        </div>
+                                        <div class="form-floating col-md-6">
+                                            <input type="text" class="form-control" id="floatingInput" placeholder="Doe">
+                                            <label for="floatingInput">Last Name</label>
+                                        </div>
+                                    </div>
+                                    <div class="input-group p-2">
+                                        <div class="form-floating mb-3 col-md-6">
+                                            <input type="text" class="form-control" id="floatingInput" placeholder="John Doe">
+                                            <label for="floatingInput">Contact's Name</label>
+                                        </div>
+                                        <div class="form-floating col-md-6">
+                                            <input type="text" class="form-control" id="floatingInput" placeholder="Ex:CEF of Philadelphia Inc.">
+                                            <label for="floatingInput">Organization Name</label>
+                                        </div>
+                                    </div>
+                                    <div class="input-group p-2">
+                                        <div class="form-floating mb-3 col-md-6">
+                                            <input type="text" class="form-control" id="floatingInput" placeholder="123 CEF Street">
+                                            <label for="floatingInput">Street Address</label>
+                                        </div>
+                                        <div class="form-floating col-md-6">
+                                            <input type="text" class="form-control" id="floatingInput" placeholder="123">
+                                            <label for="floatingInput">Apt.</label>
+                                        </div>
+                                    </div>
+                                    <div class="input-group p-2">
+                                        <div class="form-floating mb-3 col-md-6">
+                                            <input type="text" class="form-control" id="floatingInput" placeholder="Philadelphia">
+                                            <label for="floatingInput">City</label>
+                                        </div>
+                                        <div class="form-floating col-md-6">
+                                            <input type="text" class="form-control" id="floatingInput" placeholder="PA">
+                                            <label for="floatingInput">State</label>
+                                        </div>
+                                        <div class="form-floating col-md-6">
+                                            <input type="text" class="form-control" id="floatingInput" placeholder="12345">
+                                            <label for="floatingInput">Zip</label>
+                                        </div>
+                                    </div>
+                                    <div class="input-group p-2">
+                                        <div class="form-floating mb-3 col-md-6">
+                                            <input type="email" class="form-control" id="floatingInput" placeholder="pat@cef.com">
+                                            <label for="floatingInput">Email</label>
+                                        </div>
+                                        <div class="form-floating col-md-6">
+                                            <input type="text" class="form-control" id="floatingInput" placeholder="(123)456-7890">
+                                            <label for="floatingInput">Phone Number</label>
+                                            <small class="text-muted">Include area code</small>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <h1 class="card-title text-center mb-4">Comment</h1>
+                                    </div>
+                                    <div class="form-floating">
+                                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                                        <label for="floatingTextarea2">Comments</label>
+                                    </div>
+                                    <div class="text-center mt-4"> 
+                                        <button class="btn btn-success btn-rounded custom-button px-5" type="submit">Submit</button> 
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- HOSTESS EVALUATION FORM -->
+                            <div class="tab-pane fade" id="faq_tab_2" role="tabpanel" aria-labelledby="faq_tab_2-tab">
+                                <div class="container p-3 scroll-y">
+                                    <div class="p-3">
+                                        <div class="card-body text-center">                                    
+                                                <h2 class="card-title text-center ">HOSTESS EVALUATION FORM</h2>
+                                                <h3 class="card-subtitle  text-muted">So that we may be of utmost help to our Summer Missionaries, will you kindly give us evaluation on the chart below?</h3>
+                                        </div>
+                                    </div>
+
+                                    <div class="p-3">
+                                        <h3 class="card-title">Missionary's Name:</h3>
+                                        <div class="input-group">
+                                            <div class="form-floating col-md-6">
+                                                <input type="text" class="form-control" id="floatingInput" placeholder="John">
+                                                <label for="floatingInput">First Name</label>
+                                            </div>
+                                            <div class="form-floating col-md-6">
+                                                <input type="text" class="form-control" id="floatingInput" placeholder="Doe">
+                                                <label for="floatingInput">Last Name</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="border-top p-3 d-flex justify-content-between align-items-center">
+                                        <div> 
+                                            <span>Arrived early, began, and ended club on time</span>
+                                            <div class=" d-flex mt-3 justify-content-between align-items-center">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                                    <label class="form-check-label" for="inlineRadio1">Excellent</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                                    <label class="form-check-label" for="inlineRadio2">Good</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                                                    <label class="form-check-label" for="inlineRadio3">Fair</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4">
+                                                    <label class="form-check-label" for="inlineRadio4">Poor</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="border-top p-3 d-flex justify-content-between align-items-center">
+                                        <div> 
+                                            <span>Personal appearance</span>
+                                            <div class=" d-flex mt-3 justify-content-between align-items-center">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio5" value="option1">
+                                                    <label class="form-check-label" for="inlineRadio5">Excellent</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio6" value="option2">
+                                                    <label class="form-check-label" for="inlineRadio6">Good</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio7" value="option3">
+                                                    <label class="form-check-label" for="inlineRadio7">Fair</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio8" value="option4">
+                                                    <label class="form-check-label" for="inlineRadio8">Poor</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="border-top p-3 d-flex justify-content-between align-items-center">
+                                        <div> 
+                                            <span>Courteous, well-mannered</span>
+                                            <div class=" d-flex mt-3 justify-content-between align-items-center">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio9" value="option1">
+                                                    <label class="form-check-label" for="inlineRadio9">Excellent</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio10" value="option2">
+                                                    <label class="form-check-label" for="inlineRadio10">Good</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio11" value="option3">
+                                                    <label class="form-check-label" for="inlineRadio11">Fair</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio12" value="option4">
+                                                    <label class="form-check-label" for="inlineRadio12">Poor</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="border-top p-3 d-flex justify-content-between align-items-center">
+                                        <div> 
+                                            <span>Behavior with and influence on the children</span>
+                                            <div class=" d-flex mt-3 justify-content-between align-items-center">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="inlineRadioOptions3" id="inlineRadio13" value="option1">
+                                                    <label class="form-check-label" for="inlineRadio13">Excellent</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="inlineRadioOptions3" id="inlineRadio14" value="option2">
+                                                    <label class="form-check-label" for="inlineRadio14">Good</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="inlineRadioOptions3" id="inlineRadio15" value="option3">
+                                                    <label class="form-check-label" for="inlineRadio15">Fair</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="inlineRadioOptions3" id="inlineRadio16" value="option4">
+                                                    <label class="form-check-label" for="inlineRadio16">Poor</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="border-top p-3 d-flex justify-content-between align-items-center">
+                                        <div> 
+                                            <span>Success with discipline problems</span>
+                                            <div class=" d-flex mt-3 justify-content-between align-items-center">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="inlineRadioOptions4" id="inlineRadio17" value="option1">
+                                                    <label class="form-check-label" for="inlineRadio17">Excellent</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="inlineRadioOptions4" id="inlineRadio18" value="option2">
+                                                    <label class="form-check-label" for="inlineRadio18">Good</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="inlineRadioOptions4" id="inlineRadio19" value="option3">
+                                                    <label class="form-check-label" for="inlineRadio19">Fair</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="inlineRadioOptions4" id="inlineRadio20" value="option4">
+                                                    <label class="form-check-label" for="inlineRadio20">Poor</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="border-top p-3 d-flex justify-content-between align-items-center">
+                                        <div> 
+                                            <span>Cooperation with partner</span>
+                                            <div class=" d-flex mt-3 justify-content-between align-items-center">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="inlineRadioOptions5" id="inlineRadio21" value="option1">
+                                                    <label class="form-check-label" for="inlineRadio21">Excellent</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="inlineRadioOptions5" id="inlineRadio22" value="option2">
+                                                    <label class="form-check-label" for="inlineRadio22">Good</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="inlineRadioOptions5" id="inlineRadio23" value="option3">
+                                                    <label class="form-check-label" for="inlineRadio23">Fair</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="inlineRadioOptions5" id="inlineRadio24" value="option4">
+                                                    <label class="form-check-label" for="inlineRadio24">Poor</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="border-top p-3 d-flex justify-content-between align-items-center">
+                                        <div> 
+                                            <span>Seriousness of purpose</span>
+                                            <div class=" d-flex mt-3 justify-content-between align-items-center">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="inlineRadioOptions6" id="inlineRadio25" value="option1">
+                                                    <label class="form-check-label" for="inlineRadio25">Excellent</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="inlineRadioOptions6" id="inlineRadio26" value="option2">
+                                                    <label class="form-check-label" for="inlineRadio26">Good</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="inlineRadioOptions6" id="inlineRadio27" value="option3">
+                                                    <label class="form-check-label" for="inlineRadio27">Fair</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="inlineRadioOptions6" id="inlineRadio28" value="option4">
+                                                    <label class="form-check-label" for="inlineRadio28">Poor</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-floating">
+                                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                                        <label for="floatingTextarea2">Special Comment:</label>
+                                    </div>
+                                    <div class="text-center mt-4"> 
+                                        <button class="btn btn-success btn-rounded custom-button px-5" type="submit">Submit</button> 
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- STATISTICAL REPORT -->
+                            <div class="tab-pane fade" id="faq_tab_3" role="tabpanel" aria-labelledby="faq_tab_3-tab">
+                                <div class="container p-3">
+                                    <div class="p-3">
+                                        <div class="card-body text-center">                                    
+                                                <h2 class="card-title text-center ">COUNTY DIRECTOR'S STATISTICAL REPORT FORM</h2>
+                                                <h3 class="card-subtitle  text-muted">(Report due in the State Office by 15th of the month)</h3>
+                                        </div>
+                                    </div>
+
+                                    <div class="input-group mb-3"> <input type="text" class="form-control" placeholder="Search hotels..."> <input type="text" class="form-control" placeholder="Location"> </div>
+                                    <div class="input-group mb-3"> <select class="form-select form-control" id="inputGroupSelect02">
+                                            <option selected>Rooms</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3+</option>
+                                        </select> <select class="form-select form-control" id="inputGroupSelect02">
+                                            <option selected>Members</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                            <option value="3">Four</option>
+                                            <option value="3">Five</option>
+                                        </select> </div>
+                                    <div class="mt-4 d-flex justify-content-end"> <button class="btn btn-success custom-button px-5">Search Hotels</button> </div>
+                                </div>
+                            </div>
+
+                            <!-- SUMMER MISSIONARY WEEKLY REPORT -->
+                            <div class="tab-pane fade" id="faq_tab_4" role="tabpanel" aria-labelledby="faq_tab_4-tab">
+                                <div class="container p-3 scroll-y">
+                                    <div class="p-3">
+                                        <div class="card-body text-center">                                    
+                                                <h2 class="card-title text-center ">SUMMER MISSIONARY WEEKLY REPORT</h2>
+                                        </div>
+                                    </div>
+
+                                    <div class="p-3 border-top">
+                                        <div class="input-group p-2">
+                                            <div class="form-floating col-md-6">
+                                                <input type="text" class="form-control" id="floatingInput" placeholder="John Doe">
+                                                <label for="floatingInput">Name</label>
+                                            </div>
+                                            <div class="form-floating col-md-6">
+                                                <input type="text" class="form-control" id="floatingInput" placeholder="County">
+                                                <label for="floatingInput">County</label>
+                                            </div>
+                                            <div class="form-floating col-md-6">
+                                                <input type="text" class="form-control" id="floatingInput" placeholder="1-02-2022">
+                                                <label for="floatingInput">Date of Clubs</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="p-3 border-top">
+                                        <h3 class="card-title">CHURCHES:</h3>
+                                        <h4 class="card-subtitle text-muted">Indicate the churches you attended (A) or Spoke in (S):</h4>
+                                        <div class="input-group p-2">
+                                            <div class="form-floating col-md-6">
+                                                <input type="text" class="form-control" id="floatingInput" placeholder="Ex:CEF of Philadelphia Inc.">
+                                                <label for="floatingInput">Name of church:</label>
+                                            </div>
+                                        </div>
+                                        <div class="input-group p-2">
+                                            <div class="form-floating col-md-6">
+                                                <input type="text" class="form-control" id="floatingInput" placeholder="123 CEF Street">
+                                                <label for="floatingInput">Street Address</label>
+                                            </div>
+                                        </div>
+                                        <div class="input-group p-2">
+                                            <div class="form-floating col-md-6">
+                                                <input type="text" class="form-control" id="floatingInput" placeholder="Philadelphia">
+                                                <label for="floatingInput">City</label>
+                                            </div>
+                                            <div class="form-floating col-md-6">
+                                                <input type="text" class="form-control" id="floatingInput" placeholder="PA">
+                                                <label for="floatingInput">State</label>
+                                            </div>
+                                            <div class="form-floating col-md-6">
+                                                <input type="text" class="form-control" id="floatingInput" placeholder="12345">
+                                                <label for="floatingInput">Zip</label>
+                                            </div>
+                                        </div>
+                                        <div class="input-group p-2">
+                                            <div class="form-floating col-md-6">
+                                                <input type="text" class="form-control" id="floatingInput" placeholder="Pastor Quiroz">
+                                                <label for="floatingInput">Pastor:</label>
+                                            </div>
+                                        </div>
+                                        <div class="border-top input-group p-2">
+                                            <div class="form-floating col-md-6">
+                                                <input type="text" class="form-control" id="floatingInput" placeholder="Ex:CEF of Philadelphia Inc.">
+                                                <label for="floatingInput">Name of church:</label>
+                                            </div>
+                                        </div>
+                                        <div class="input-group p-2">
+                                            <div class="form-floating col-md-6">
+                                                <input type="text" class="form-control" id="floatingInput" placeholder="123 CEF Street">
+                                                <label for="floatingInput">Street Address</label>
+                                            </div>
+                                        </div>
+                                        <div class="input-group p-2">
+                                            <div class="form-floating col-md-6">
+                                                <input type="text" class="form-control" id="floatingInput" placeholder="Philadelphia">
+                                                <label for="floatingInput">City</label>
+                                            </div>
+                                            <div class="form-floating col-md-6">
+                                                <input type="text" class="form-control" id="floatingInput" placeholder="PA">
+                                                <label for="floatingInput">State</label>
+                                            </div>
+                                            <div class="form-floating col-md-6">
+                                                <input type="text" class="form-control" id="floatingInput" placeholder="12345">
+                                                <label for="floatingInput">Zip</label>
+                                            </div>
+                                        </div>
+                                        <div class="input-group p-2">
+                                            <div class="form-floating col-md-6">
+                                                <input type="text" class="form-control" id="floatingInput" placeholder="Pastor Quiroz">
+                                                <label for="floatingInput">Pastor:</label>
+                                            </div>
+                                        </div>
+
+                                        <div class=" border-top input-group p-2">
+                                            <div class="form-floating col-md-6">
+                                                <input type="text" class="form-control" id="floatingInput" placeholder="Ex:CEF of Philadelphia Inc.">
+                                                <label for="floatingInput">Name of church:</label>
+                                            </div>
+                                        </div>
+                                        <div class="input-group p-2">
+                                            <div class="form-floating col-md-6">
+                                                <input type="text" class="form-control" id="floatingInput" placeholder="123 CEF Street">
+                                                <label for="floatingInput">Street Address</label>
+                                            </div>
+                                        </div>
+                                        <div class="input-group p-2">
+                                            <div class="form-floating col-md-6">
+                                                <input type="text" class="form-control" id="floatingInput" placeholder="Philadelphia">
+                                                <label for="floatingInput">City</label>
+                                            </div>
+                                            <div class="form-floating col-md-6">
+                                                <input type="text" class="form-control" id="floatingInput" placeholder="PA">
+                                                <label for="floatingInput">State</label>
+                                            </div>
+                                            <div class="form-floating col-md-6">
+                                                <input type="text" class="form-control" id="floatingInput" placeholder="12345">
+                                                <label for="floatingInput">Zip</label>
+                                            </div>
+                                        </div>
+                                        <div class="input-group p-2">
+                                            <div class="form-floating col-md-6">
+                                                <input type="text" class="form-control" id="floatingInput" placeholder="Pastor Quiroz">
+                                                <label for="floatingInput">Pastor:</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="p-3 border-top">
+                                        <h3 class="card-title">Courtesies:</h3>
+                                        <h4 class="card-subtitle text-muted">Indicate if courtesy was a meal, food supplies, gasoline, laundry, etc.</h4>
+                                        <div class="input-group p-2">
+                                            <div class="form-floating col-md-6">
+                                                <input type="text" class="form-control" id="floatingInput" placeholder="John Doe">
+                                                <label for="floatingInput">Name</label>
+                                            </div>
+                                        </div>
+                                        <div class="input-group p-2">
+                                            <div class="form-floating col-md-6">
+                                                <input type="text" class="form-control" id="floatingInput" placeholder="123 CEF Street">
+                                                <label for="floatingInput">Street Address</label>
+                                            </div>
+                                        </div>
+                                        <div class="input-group p-2">
+                                            <div class="form-floating col-md-6">
+                                                <input type="text" class="form-control" id="floatingInput" placeholder="Philadelphia">
+                                                <label for="floatingInput">City</label>
+                                            </div>
+                                            <div class="form-floating col-md-6">
+                                                <input type="text" class="form-control" id="floatingInput" placeholder="PA">
+                                                <label for="floatingInput">State</label>
+                                            </div>
+                                            <div class="form-floating col-md-6">
+                                                <input type="text" class="form-control" id="floatingInput" placeholder="12345">
+                                                <label for="floatingInput">Zip</label>
+                                            </div>
+                                        </div>
+                                        <div class="input-group p-2">
+                                            <div class="form-floating col-md-6">
+                                                <input type="text" class="form-control" id="floatingInput" placeholder="Gasoline">
+                                                <label for="floatingInput">Courtesy:</label>
+                                            </div>
+                                        </div>
+                                        <div class="border-top input-group p-2">
+                                            <div class="form-floating col-md-6">
+                                                <input type="text" class="form-control" id="floatingInput" placeholder="John Doe">
+                                                <label for="floatingInput">Name</label>
+                                            </div>
+                                        </div>
+                                        <div class="input-group p-2">
+                                            <div class="form-floating col-md-6">
+                                                <input type="text" class="form-control" id="floatingInput" placeholder="123 CEF Street">
+                                                <label for="floatingInput">Street Address</label>
+                                            </div>
+                                        </div>
+                                        <div class="input-group p-2">
+                                            <div class="form-floating col-md-6">
+                                                <input type="text" class="form-control" id="floatingInput" placeholder="Philadelphia">
+                                                <label for="floatingInput">City</label>
+                                            </div>
+                                            <div class="form-floating col-md-6">
+                                                <input type="text" class="form-control" id="floatingInput" placeholder="PA">
+                                                <label for="floatingInput">State</label>
+                                            </div>
+                                            <div class="form-floating col-md-6">
+                                                <input type="text" class="form-control" id="floatingInput" placeholder="12345">
+                                                <label for="floatingInput">Zip</label>
+                                            </div>
+                                        </div>
+                                        <div class="input-group p-2">
+                                            <div class="form-floating col-md-6">
+                                                <input type="text" class="form-control" id="floatingInput" placeholder="Pastor Quiroz">
+                                                <label for="floatingInput">Courtesy</label>
+                                            </div>
+                                        </div>
+
+                                        <div class=" border-top input-group p-2">
+                                            <div class="form-floating col-md-6">
+                                                <input type="text" class="form-control" id="floatingInput" placeholder="John Doe">
+                                                <label for="floatingInput">Name</label>
+                                            </div>
+                                        </div>
+                                        <div class="input-group p-2">
+                                            <div class="form-floating col-md-6">
+                                                <input type="text" class="form-control" id="floatingInput" placeholder="123 CEF Street">
+                                                <label for="floatingInput">Street Address</label>
+                                            </div>
+                                        </div>
+                                        <div class="input-group p-2">
+                                            <div class="form-floating col-md-6">
+                                                <input type="text" class="form-control" id="floatingInput" placeholder="Philadelphia">
+                                                <label for="floatingInput">City</label>
+                                            </div>
+                                            <div class="form-floating col-md-6">
+                                                <input type="text" class="form-control" id="floatingInput" placeholder="PA">
+                                                <label for="floatingInput">State</label>
+                                            </div>
+                                            <div class="form-floating col-md-6">
+                                                <input type="text" class="form-control" id="floatingInput" placeholder="12345">
+                                                <label for="floatingInput">Zip</label>
+                                            </div>
+                                        </div>
+                                        <div class="input-group p-2">
+                                            <div class="form-floating col-md-6">
+                                                <input type="text" class="form-control" id="floatingInput" placeholder="Food">
+                                                <label for="floatingInput">Courtesy</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="">
+                                            <div class="text-center mt-3"> 
+                                                <button class="btn btn-success btn-rounded custom-button px-5" type="submit">Submit</button> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-            </mat-card>
-        </form>
+            </div>
+        </div>
     </div>
- </div>
+</div>

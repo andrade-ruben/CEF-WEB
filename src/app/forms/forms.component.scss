@@ -1,69 +1,94 @@
-.full-width{
-    width: 100%;
+.article-title {
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: sans-serif;
+    color: white;
+    background: linear-gradient(to bottom, rgba(226,37,255) 0%, rgba(73,198,252) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
-
-.mat-card, .card{
+.card1{
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
     border-radius: 20px;
 
-    .mat-card-header{
-        color: blue;
-    }
 }
 
-.submit-button {
-    background: linear-gradient(to right, rgba(226,37,255), rgba(73,198,252));
-    border-radius: 999px;
-    box-shadow: #5E5DF0 0 10px 20px -10px;
-    box-sizing: border-box;
-    color: #FFFFFF;
-    cursor: pointer;
-    font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 24px;
-    opacity: 1;
-    outline: 0 solid transparent;
-    padding: 8px 18px;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    width: 25%;
-    word-break: break-word;
-    border: 0;
+::-webkit-scrollbar {
+    width: 6px
 }
-
-.button-container{
-    margin: 25px 100px 50px 100px;
+::-webkit-scrollbar-track {
+    background: #f1f1f1
 }
-
-.form-button{
-    background: linear-gradient(to right, rgba(226,37,255), rgba(73,198,252));
+::-webkit-scrollbar-thumb {
+    background: #888
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555
+}
+.nav-tabs .nav-link.active {
+    border-color: transparent;
+    background-color: #fff !important;
+    color: #9a1550 !important;
+    border-bottom: 4px solid #9a1550 !important
+}
+.nav-fill .nav-item .nav-link,
+.nav-justified .nav-item .nav-link {
+    width: 100%;
+    color: #000
+}
+.nav-tabs .nav-link {
+    border-top-left-radius: 0rem !important;
+    border-top-right-radius: 0rem !important
+}
+.nav-tabs .nav-link.active {
+    border-color: transparent;
+    background-color: #60D0FF;
+    color: #fff;
+    font-weight: 600
+}
+.nav-link {
+    height: 77px;
+    font-size: 13px;
+    background-color: #fff
+}
+.nav-link:hover {
+    border: none
+}
+.nav-link:focus {
+    outline: none
+}
+.tab-pane {
+    height: 600px;
+}
+.form-control {
+    height: 45px;
+    position: relative
+}
+.form-control:focus {
+    outline: none;
+    box-shadow: none;
+    border: 1px solid #9a1550
+}
+.flight-where-from:after {
+    position: absolute;
+    content: '23';
+    width: 20px;
+    height: 20px;
+    border-radius: 50%
+}
+.custom-button {
+    height: 45px;
+    background-color: #9a1550;
     border: none;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    border-radius: 8px;
+    color: #fff
 }
-
-.gradient-text {
-    background-color: lightblue;
-    background: linear-gradient(to right, rgba(226,37,255), rgba(73,198,252));
-    background-size: 100%;
-    background-repeat: repeat;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; 
-    -moz-background-clip: text;
-    -moz-text-fill-color: transparent;
+.custom-button:hover,
+.custom-button:focus {
+    background-color: #9a1550;
+    box-shadow: none;
+    outline: none
 }
-  
-h1 {
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bolder;
-    font-size: 2.8em;
-    text-align: center;
+.scroll-y {
+    overflow-y: scroll;
+    height: 600px
 }
