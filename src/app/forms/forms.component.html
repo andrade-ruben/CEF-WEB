@@ -379,212 +379,68 @@
                                                 <label for="floatingInput">Date of Clubs</label>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div>                                    
 
                                     <div class="p-3 border-top">
-                                        <h3 class="card-title">CHURCHES:</h3>
-                                        <h4 class="card-subtitle text-muted">Indicate the churches you attended (A) or Spoke in (S):</h4>
-                                        <div class="input-group p-2">
-                                            <div class="form-floating col-md-6">
-                                                <input type="text" class="form-control" id="floatingInput" placeholder="Ex:CEF of Philadelphia Inc.">
-                                                <label for="floatingInput">Name of church:</label>
+                                        <hr class="border border-primary border-3 opacity-75">
+                                        <form class="example-form" [formGroup]="churchForm">
+                                            <div *ngFor="let church of churchArray.controls; let i = index;" formArrayName="churches">
+                                                <div div class="form-group" [formGroupName]='i'>
+                                                    <h3 class="card-title fw-bold">CHURCHES:</h3>
+                                                    <h4 class="card-subtitle text-muted">Indicate the churches you attended (A) or Spoke in (S):</h4>
+                                                    <div class="input-group p-2">
+                                                        <div class="form-floating col-md-6">
+                                                            <input type="text" class="form-control" id="floatingInput" placeholder="Ex:CEF of Philadelphia Inc." name="churchName" formControlName="churchName">
+                                                            <label for="floatingInput">Name of church:</label>
+                                                        </div>
+                                                        <div class="form-floating col-md-6">
+                                                            <input type="text" class="form-control" id="floatingInput" placeholder="Pastor Quiroz" name="pastorName" formControlName="pastorName">
+                                                            <label for="floatingInput">Pastor:</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-group p-2">
+                                                        <div class="form-floating col-md-6">
+                                                            <input type="text" class="form-control" id="floatingInput" placeholder="123 CEF Street" name="street" formControlName="street">
+                                                            <label for="floatingInput">Street Address</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-group p-2">
+                                                        <div class="form-floating col-md-6">
+                                                            <input type="text" class="form-control" id="floatingInput" placeholder="Philadelphia" name="city" formControlName="city">
+                                                            <label for="floatingInput">City</label>
+                                                        </div>
+                                                        <div class="form-floating col-md-6">
+                                                            <input type="text" class="form-control" id="floatingInput" placeholder="PA" name="state" formControlName="state">
+                                                            <label for="floatingInput">State</label>
+                                                        </div>
+                                                        <div class="form-floating col-md-6">
+                                                            <input type="text" class="form-control" id="floatingInput" placeholder="12345" name="zip" formControlName="zip">
+                                                            <label for="floatingInput">Zip</label>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <h4 class="border-top card-subtitle text-muted">Indicate if courtesy was a meal, food supplies, gasoline, laundry, etc.</h4>
+                                                        <div class="input-group p-2">
+                                                            <div class="form-floating col-md-12">
+                                                                <textarea type="text" class="form-control" placeholder="Ex: meal, food supplies, gasoline, laundry, etc." id="floatingInput" formControlName="courtesy" style="height: 100px"></textarea>
+                                                                <label for="floatingInput">Courtesies:</label>
+                                                                <hr class="border border-primary border-3 opacity-75">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <button *ngIf="i>0" class="btn btn-danger btn-rounded mb-3 float-end" (click)="removeChurch(i)">Remove Church</button>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="input-group p-2">
-                                            <div class="form-floating col-md-6">
-                                                <input type="text" class="form-control" id="floatingInput" placeholder="123 CEF Street">
-                                                <label for="floatingInput">Street Address</label>
-                                            </div>
-                                        </div>
-                                        <div class="input-group p-2">
-                                            <div class="form-floating col-md-6">
-                                                <input type="text" class="form-control" id="floatingInput" placeholder="Philadelphia">
-                                                <label for="floatingInput">City</label>
-                                            </div>
-                                            <div class="form-floating col-md-6">
-                                                <input type="text" class="form-control" id="floatingInput" placeholder="PA">
-                                                <label for="floatingInput">State</label>
-                                            </div>
-                                            <div class="form-floating col-md-6">
-                                                <input type="text" class="form-control" id="floatingInput" placeholder="12345">
-                                                <label for="floatingInput">Zip</label>
-                                            </div>
-                                        </div>
-                                        <div class="input-group p-2">
-                                            <div class="form-floating col-md-6">
-                                                <input type="text" class="form-control" id="floatingInput" placeholder="Pastor Quiroz">
-                                                <label for="floatingInput">Pastor:</label>
-                                            </div>
-                                        </div>
-                                        <div class="border-top input-group p-2">
-                                            <div class="form-floating col-md-6">
-                                                <input type="text" class="form-control" id="floatingInput" placeholder="Ex:CEF of Philadelphia Inc.">
-                                                <label for="floatingInput">Name of church:</label>
-                                            </div>
-                                        </div>
-                                        <div class="input-group p-2">
-                                            <div class="form-floating col-md-6">
-                                                <input type="text" class="form-control" id="floatingInput" placeholder="123 CEF Street">
-                                                <label for="floatingInput">Street Address</label>
-                                            </div>
-                                        </div>
-                                        <div class="input-group p-2">
-                                            <div class="form-floating col-md-6">
-                                                <input type="text" class="form-control" id="floatingInput" placeholder="Philadelphia">
-                                                <label for="floatingInput">City</label>
-                                            </div>
-                                            <div class="form-floating col-md-6">
-                                                <input type="text" class="form-control" id="floatingInput" placeholder="PA">
-                                                <label for="floatingInput">State</label>
-                                            </div>
-                                            <div class="form-floating col-md-6">
-                                                <input type="text" class="form-control" id="floatingInput" placeholder="12345">
-                                                <label for="floatingInput">Zip</label>
-                                            </div>
-                                        </div>
-                                        <div class="input-group p-2">
-                                            <div class="form-floating col-md-6">
-                                                <input type="text" class="form-control" id="floatingInput" placeholder="Pastor Quiroz">
-                                                <label for="floatingInput">Pastor:</label>
-                                            </div>
-                                        </div>
 
-                                        <div class=" border-top input-group p-2">
-                                            <div class="form-floating col-md-6">
-                                                <input type="text" class="form-control" id="floatingInput" placeholder="Ex:CEF of Philadelphia Inc.">
-                                                <label for="floatingInput">Name of church:</label>
+                                            <div>
+                                                <button class="btn btn-primary btn-rounded" (click)="addChurch()">Add Church</button>
                                             </div>
-                                        </div>
-                                        <div class="input-group p-2">
-                                            <div class="form-floating col-md-6">
-                                                <input type="text" class="form-control" id="floatingInput" placeholder="123 CEF Street">
-                                                <label for="floatingInput">Street Address</label>
-                                            </div>
-                                        </div>
-                                        <div class="input-group p-2">
-                                            <div class="form-floating col-md-6">
-                                                <input type="text" class="form-control" id="floatingInput" placeholder="Philadelphia">
-                                                <label for="floatingInput">City</label>
-                                            </div>
-                                            <div class="form-floating col-md-6">
-                                                <input type="text" class="form-control" id="floatingInput" placeholder="PA">
-                                                <label for="floatingInput">State</label>
-                                            </div>
-                                            <div class="form-floating col-md-6">
-                                                <input type="text" class="form-control" id="floatingInput" placeholder="12345">
-                                                <label for="floatingInput">Zip</label>
-                                            </div>
-                                        </div>
-                                        <div class="input-group p-2">
-                                            <div class="form-floating col-md-6">
-                                                <input type="text" class="form-control" id="floatingInput" placeholder="Pastor Quiroz">
-                                                <label for="floatingInput">Pastor:</label>
-                                            </div>
-                                        </div>
+
+                                        </form>        
                                     </div>
-
-                                    <div class="p-3 border-top">
-                                        <h3 class="card-title">Courtesies:</h3>
-                                        <h4 class="card-subtitle text-muted">Indicate if courtesy was a meal, food supplies, gasoline, laundry, etc.</h4>
-                                        <div class="input-group p-2">
-                                            <div class="form-floating col-md-6">
-                                                <input type="text" class="form-control" id="floatingInput" placeholder="John Doe">
-                                                <label for="floatingInput">Name</label>
-                                            </div>
-                                        </div>
-                                        <div class="input-group p-2">
-                                            <div class="form-floating col-md-6">
-                                                <input type="text" class="form-control" id="floatingInput" placeholder="123 CEF Street">
-                                                <label for="floatingInput">Street Address</label>
-                                            </div>
-                                        </div>
-                                        <div class="input-group p-2">
-                                            <div class="form-floating col-md-6">
-                                                <input type="text" class="form-control" id="floatingInput" placeholder="Philadelphia">
-                                                <label for="floatingInput">City</label>
-                                            </div>
-                                            <div class="form-floating col-md-6">
-                                                <input type="text" class="form-control" id="floatingInput" placeholder="PA">
-                                                <label for="floatingInput">State</label>
-                                            </div>
-                                            <div class="form-floating col-md-6">
-                                                <input type="text" class="form-control" id="floatingInput" placeholder="12345">
-                                                <label for="floatingInput">Zip</label>
-                                            </div>
-                                        </div>
-                                        <div class="input-group p-2">
-                                            <div class="form-floating col-md-6">
-                                                <input type="text" class="form-control" id="floatingInput" placeholder="Gasoline">
-                                                <label for="floatingInput">Courtesy:</label>
-                                            </div>
-                                        </div>
-                                        <div class="border-top input-group p-2">
-                                            <div class="form-floating col-md-6">
-                                                <input type="text" class="form-control" id="floatingInput" placeholder="John Doe">
-                                                <label for="floatingInput">Name</label>
-                                            </div>
-                                        </div>
-                                        <div class="input-group p-2">
-                                            <div class="form-floating col-md-6">
-                                                <input type="text" class="form-control" id="floatingInput" placeholder="123 CEF Street">
-                                                <label for="floatingInput">Street Address</label>
-                                            </div>
-                                        </div>
-                                        <div class="input-group p-2">
-                                            <div class="form-floating col-md-6">
-                                                <input type="text" class="form-control" id="floatingInput" placeholder="Philadelphia">
-                                                <label for="floatingInput">City</label>
-                                            </div>
-                                            <div class="form-floating col-md-6">
-                                                <input type="text" class="form-control" id="floatingInput" placeholder="PA">
-                                                <label for="floatingInput">State</label>
-                                            </div>
-                                            <div class="form-floating col-md-6">
-                                                <input type="text" class="form-control" id="floatingInput" placeholder="12345">
-                                                <label for="floatingInput">Zip</label>
-                                            </div>
-                                        </div>
-                                        <div class="input-group p-2">
-                                            <div class="form-floating col-md-6">
-                                                <input type="text" class="form-control" id="floatingInput" placeholder="Pastor Quiroz">
-                                                <label for="floatingInput">Courtesy</label>
-                                            </div>
-                                        </div>
-
-                                        <div class=" border-top input-group p-2">
-                                            <div class="form-floating col-md-6">
-                                                <input type="text" class="form-control" id="floatingInput" placeholder="John Doe">
-                                                <label for="floatingInput">Name</label>
-                                            </div>
-                                        </div>
-                                        <div class="input-group p-2">
-                                            <div class="form-floating col-md-6">
-                                                <input type="text" class="form-control" id="floatingInput" placeholder="123 CEF Street">
-                                                <label for="floatingInput">Street Address</label>
-                                            </div>
-                                        </div>
-                                        <div class="input-group p-2">
-                                            <div class="form-floating col-md-6">
-                                                <input type="text" class="form-control" id="floatingInput" placeholder="Philadelphia">
-                                                <label for="floatingInput">City</label>
-                                            </div>
-                                            <div class="form-floating col-md-6">
-                                                <input type="text" class="form-control" id="floatingInput" placeholder="PA">
-                                                <label for="floatingInput">State</label>
-                                            </div>
-                                            <div class="form-floating col-md-6">
-                                                <input type="text" class="form-control" id="floatingInput" placeholder="12345">
-                                                <label for="floatingInput">Zip</label>
-                                            </div>
-                                        </div>
-                                        <div class="input-group p-2">
-                                            <div class="form-floating col-md-6">
-                                                <input type="text" class="form-control" id="floatingInput" placeholder="Food">
-                                                <label for="floatingInput">Courtesy</label>
-                                            </div>
-                                        </div>
-                                    </div>
-
+                                        
                                     <div class="row">
                                         <div class="">
                                             <div class="text-center mt-3"> 

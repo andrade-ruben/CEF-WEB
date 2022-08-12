@@ -58,7 +58,7 @@
     outline: none
 }
 .tab-pane {
-    height: 600px;
+    height: 1000px;
 }
 .form-control {
     height: 45px;
@@ -90,5 +90,39 @@
 }
 .scroll-y {
     overflow-y: scroll;
-    height: 600px
+    height: 1000px
+}
+
+.container .table-responsive{
+    margin: 20px auto;
+    overflow-x: auto
+}
+
+.container .table-responsive::-webkit-scrollbar{
+    height: 5px
+}
+
+.container .table-responsive::-webkit-scrollbar-thumb{
+    border-radius: 5px;
+    background-image: linear-gradient(to right, #5D7ECD, #0C91E6)
+}
+
+.table thead tr th{
+    font-size: 11px;
+    color: #868585;
+    padding: 10px 10px
+}
+
+.table tbody tr td{
+    font-size: 13.5px;
+    padding: 10px 10px
+}
+
+.bg-blight{
+    color: #7f7fee;
+    font-weight: 600
+}
+.bg-bdark{
+    color: #4c4c96;
+    font-weight: 600
 }
