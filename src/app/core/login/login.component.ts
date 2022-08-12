@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
-
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,20 +9,40 @@ import { FormControl, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  email = new FormControl ('',[Validators.required, Validators.email]);
-  hide = true;
+  //Form Validables 
+  registerForm:any = FormGroup;
+  submitted = false;
+  
+  constructor( private formBuilder: FormBuilder){}
+  
+  //Add user form actions
+  get f() { return this.registerForm.controls; }
 
-  getErrorMessage(){
-    if(this.email.hasError('required')){
-      return 'You must enter a value';
-    }
-    
-    return this.email.hasError('email') ? 'Not a valid email' : '';
+  onSubmit() {
+  
+  this.submitted = true;
+  
+  // stop here if form is invalid
+  if (this.registerForm.invalid) {
+      return;
   }
   
-  constructor() { }
-
-  ngOnInit(): void {
+  //True if all the fields are filled
+  if(this.submitted)
+  {
+    alert("Great!!");
   }
+ 
+}
+  ngOnInit() {
+    //Add User form validations
+    this.registerForm = this.formBuilder.group({
+    email: ['', [Validators.required, Validators.email]],
+    password: ['', [Validators.required]]
+    });
+  }
+
+  // public get username() { return this.loginForm.get('username'); }
+  // public get password() { return this.loginForm.get('password'); }
 
 }

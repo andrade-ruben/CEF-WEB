@@ -7,19 +7,27 @@ import { EventsComponent } from './events/events.component';
 import { DonationsComponent } from './donations/donations.component';
 import { MediaComponent } from './media/media.component';
 import { ResourcesComponent } from './resources/resources.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
 
 import { LoginComponent } from './core/login/login.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: '', pathMatch: 'full'},
-  {path: 'message', component: MessageComponent},
-  {path:'email', component:EmailComponent},
-  {path:'forms', component:FormsComponent},
-  {path:'events', component:EventsComponent},
-  {path:'donations', component:DonationsComponent},
-  {path:'media', component:MediaComponent},
-  {path:'resources', component:ResourcesComponent},
+  {path: '', redirectTo: 'login', pathMatch: 'full'},
   {path:'login', component:LoginComponent},
+  {
+    path:'', 
+    component:SidenavComponent,
+    children : [
+      {path: 'message', component: MessageComponent},
+      {path:'email', component:EmailComponent},
+      {path:'forms', component:FormsComponent},
+      {path:'events', component:EventsComponent},
+      {path:'donations', component:DonationsComponent},
+      {path:'media', component:MediaComponent},
+      {path:'resources', component:ResourcesComponent},
+    ]
+  },
+  
 ];
 
 @NgModule({
