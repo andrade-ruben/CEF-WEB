@@ -6,20 +6,20 @@
          </div>
          <h1 class="text-center text-white">Log In</h1>
             <div class="form-container">
-               <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+               <form [formGroup]="loginForm" (ngSubmit)="ProceedLogin()">
                   <div class="form-floating mb-4">
-                     <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }"  id="inputEmail4">
-                     <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                     <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" formControlName="username"  id="inputEmail4" autocomplete="off" >
+                     <!-- <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
                        <div class="text-warning fw-bold" *ngIf="f.email.errors.required">Email is required</div>
                        <div class="text-warning fw-bold" *ngIf="f.email.errors.email">Email must be a valid email address</div>
-                    </div>
+                    </div> -->
                      <label for="floatingInput">Email address</label>
                    </div>
                    <div class="form-floating mb-4">
-                     <input type="password" class="form-control" id="floatingPassword" placeholder="Password" formControlName="password"[ngClass]="{ 'is-invalid': submitted && f.password.errors }" id="inputPassword4">
-                     <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                     <input type="password" class="form-control" id="floatingPassword" placeholder="Password" formControlName="password"  id="inputPassword4" autocomplete="off" >
+                     <!-- <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
                        <div class="text-warning fw-bold" *ngIf="f.password.errors.required">Password is required</div>
-                    </div>
+                    </div> -->
                      <label for="floatingPassword">Password</label>
                    </div>
    

@@ -16,6 +16,10 @@ import { ResourcesComponent } from './resources/resources.component';
 import { CoreModule } from './core/core.module';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+
+
+
 
 
 @NgModule({
@@ -28,7 +32,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     EventsComponent,
     FormsComponent,
     MediaComponent,
-    ResourcesComponent
+    ResourcesComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,9 +41,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MaterialModule,
     CoreModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    // {
+    //   provide: HTTP_INTERCEPTORS,
+    //   useClass: AuthInterceptor,
+    //   multi:true
+    // }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
