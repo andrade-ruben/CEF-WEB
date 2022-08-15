@@ -10,9 +10,11 @@ import { ResourcesComponent } from './resources/resources.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 
 import { LoginComponent } from './core/login/login.component';
+import { AuthGuard } from './service/auth.guard';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'login', pathMatch: 'full'},
+  {path: '', component: SidenavComponent, canActivate:[AuthGuard]},
   {path:'login', component:LoginComponent},
   {
     path:'', 
@@ -25,8 +27,8 @@ const routes: Routes = [
       {path:'donations', component:DonationsComponent},
       {path:'media', component:MediaComponent},
       {path:'resources', component:ResourcesComponent},
-    ]
-  },
+    ], canActivate:[AuthGuard]
+  }
   
 ];
 

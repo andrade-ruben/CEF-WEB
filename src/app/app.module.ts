@@ -17,9 +17,10 @@ import { CoreModule } from './core/core.module';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-
-
-
+import { AuthService } from './service/auth.service';
+import { AuthGuard } from './service/auth.guard';
+import { HomeComponent } from './home/home.component';
+import { TokenInterceptorService } from './service/token-interceptor.service';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
     FormsComponent,
     MediaComponent,
     ResourcesComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,13 +46,12 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [
-    // {
-    //   provide: HTTP_INTERCEPTORS,
-    //   useClass: AuthInterceptor,
-    //   multi:true
-    // }
-  ],
+  providers: [ AuthService, AuthGuard,
+    { 
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi:true
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
