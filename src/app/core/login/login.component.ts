@@ -11,19 +11,14 @@ import { AuthService } from 'src/app/service/auth.service';
 export class LoginComponent implements OnInit {
 
   //Form Validate 
-  
   submitted = false;
-
   responseData: any;
   
-  constructor(private service:AuthService, private route:Router
-
-  ){
+  constructor(private service:AuthService, private route:Router)
+  {
     localStorage.clear();
   }
   
-  //Add user form actions
-  get f() { return this.loginForm.controls; }
 
   ProceedLogin() {
 
@@ -50,27 +45,24 @@ export class LoginComponent implements OnInit {
       })
     }
   
-    // this.submitted = true;
+    this.submitted = true;
     
     // //stop here if form is invalid
     if (this.loginForm.invalid) {
         return;
     }
-  }
+
+    // //True if all the fields are filled
+    // if(this.submitted)
+    // {
+    //   alert("Great!!");
+    // }
   
-  // //True if all the fields are filled
-  // if(this.submitted)
-  // {
-  //   alert("Great!!");
-  // }
+  }
   
 
-  ngOnInit():void {
-    //Add User form validations
-    // this.loginForm = this.formBuilder.group({
-    
-    // });
-  }
+
+  ngOnInit():void {}
 
   loginForm =  new FormGroup({
     username: new FormControl ('', [Validators.required, Validators.email]),

@@ -9,7 +9,7 @@
                <form [formGroup]="loginForm" (ngSubmit)="ProceedLogin()">
                   <div class="form-floating mb-4">
                      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" formControlName="username"  id="inputEmail4" autocomplete="off" >
-                     <div *ngIf="username?.invalid && (username?.touched || username?.dirty)" class="text-warning">
+                     <div *ngIf="submitted && username?.invalid && (username?.touched || username?.dirty)" class="text-warning">
                        <div class="text-warning fw-bold" *ngIf="username?.errors?.['required']">Email is required</div>
                        <div class="text-warning fw-bold" *ngIf="username?.errors?.['email']">Email must be a valid email address</div>
                     </div>
@@ -17,7 +17,7 @@
                    </div>
                    <div class="form-floating mb-4">
                      <input type="password" class="form-control" id="floatingPassword" placeholder="Password" formControlName="password"  id="inputPassword4" autocomplete="off" >
-                     <div *ngIf="password?.invalid && (password?.touched || password?.dirty)" class="text-warning">
+                     <div *ngIf="submitted && password?.invalid && (password?.touched || password?.dirty)" class="text-warning">
                        <div class="text-warning fw-bold" *ngIf="password?.errors?.['required']">Password is required</div>
                     </div>
                      <label for="floatingPassword">Password</label>
