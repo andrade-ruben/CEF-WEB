@@ -50,20 +50,21 @@ export class LoginComponent implements OnInit {
       })
     }
   
-  // this.submitted = true;
-  
-  // //stop here if form is invalid
-  // if (this.loginForm.invalid) {
-  //     return;
-  // }
+    // this.submitted = true;
+    
+    // //stop here if form is invalid
+    if (this.loginForm.invalid) {
+        return;
+    }
+  }
   
   // //True if all the fields are filled
   // if(this.submitted)
   // {
   //   alert("Great!!");
   // }
- 
-}
+  
+
   ngOnInit():void {
     //Add User form validations
     // this.loginForm = this.formBuilder.group({
@@ -76,7 +77,7 @@ export class LoginComponent implements OnInit {
     password: new FormControl('', Validators.required)
   });
 
-  // public get username() { return this.loginForm.get('username'); }
-  // public get password() { return this.loginForm.get('password'); }
+  public get username() { return this.loginForm.get('username'); }
+  public get password() { return this.loginForm.get('password'); }
 
 }
