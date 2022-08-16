@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Route, Router } from '@angular/router';
 import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
         //   localStorage.setItem('token', this.responseData.jwtToken);
         //   this.route.navigate([''])
         // }
-
+        
         // if(result.success){
         //   console.log(result)
         //   alert(result.message);
