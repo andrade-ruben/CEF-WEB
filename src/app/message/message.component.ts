@@ -9,6 +9,8 @@ import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 })
 export class MessageComponent implements OnInit {
 
+  today: number = Date.now();
+
   Bible: any[] = [
     {
       "name": "John 3:14-18",
